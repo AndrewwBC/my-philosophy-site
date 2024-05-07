@@ -25,6 +25,7 @@ export const Post = styled.section`
   .titleAndDate {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 
     p {
       font-size: 24px;
@@ -33,6 +34,7 @@ export const Post = styled.section`
 
     span {
       color: gray;
+      margin-bottom: 8px;
     }
   }
 

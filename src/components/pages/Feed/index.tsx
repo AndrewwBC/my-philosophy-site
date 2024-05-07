@@ -4,8 +4,6 @@ import { getPosts } from "./api";
 import Loading from "../../Loading";
 
 const Feed = () => {
-  const categories = ["Platão", "Aristóteles", "Existencialismo"];
-
   interface PostsProps {
     id: string;
     created_at: string;
@@ -15,7 +13,7 @@ const Feed = () => {
         text: string;
       }
     ];
-    categories: string[];
+    categorie: string;
   }
   const [posts, setPosts] = useState<PostsProps[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,8 +30,15 @@ const Feed = () => {
     <>
       <header>
         <Nav>
-          {categories.map((item) => (
-            <li key={item}>{item}</li>
+          {posts.map(({ categorie }, index) => (
+            <li
+              key={index}
+              onClick={(e) =>
+                setFilteredByCategories(e.currentTarget.textContent!)
+              }
+            >
+              {categorie}
+            </li>
           ))}
         </Nav>
       </header>
@@ -42,16 +47,12 @@ const Feed = () => {
 
       {posts &&
         posts.map((item) => {
-          if (
-            (filteredByCategories &&
-              item.categories[0] === filteredByCategories) ||
-            item.categories[1] === filteredByCategories
-          ) {
+          if (filteredByCategories && item.categorie === filteredByCategories) {
             return (
               <Post>
                 <div className="titleAndDate">
+                  <span>Postagem realizada em {item.created_at}</span>
                   <p>{item.title}</p>
-                  <span>{item.created_at}</span>
                 </div>
                 <div className="textContent">
                   {item.text_paragraph.map(({ text }) => (
@@ -59,9 +60,7 @@ const Feed = () => {
                   ))}
                 </div>
                 <div className="categories">
-                  {item.categories.map((item) => (
-                    <p>{item}</p>
-                  ))}
+                  <p>#{item.categorie}</p>
                 </div>
               </Post>
             );
@@ -69,8 +68,8 @@ const Feed = () => {
             return (
               <Post>
                 <div className="titleAndDate">
+                  <span>Postagem realizada em {item.created_at}</span>
                   <p>{item.title}</p>
-                  <span>{item.created_at}</span>
                 </div>
                 <div className="textContent">
                   {item.text_paragraph.map(({ text }) => (
@@ -78,9 +77,7 @@ const Feed = () => {
                   ))}
                 </div>
                 <div className="categories">
-                  {item.categories.map((item) => (
-                    <p>{item}</p>
-                  ))}
+                  <p>#{item.categorie}</p>
                 </div>
               </Post>
             );

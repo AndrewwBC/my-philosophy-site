@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Content, Input, TextArea } from "./styles";
+import { Content, Input } from "./styles";
+import { postAPI } from "./api";
 
 const Write = () => {
   const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [categorie, setCategorie] = useState("");
 
   function addParagraph() {
     const textContainer = document.getElementById("textContainer");
@@ -72,17 +73,22 @@ const Write = () => {
     const textOfEachParagraph: { text: string }[] = [];
 
     textContainer?.childNodes.forEach(({ textContent }) => {
+      alert(textContent);
       textOfEachParagraph.push({
         text: textContent!,
       });
     });
+
+    console.log(title, textOfEachParagraph);
+
+    postAPI(title, textOfEachParagraph, categorie);
   }
 
   return (
     <Content>
       <p>Escreva a postagem.</p>
 
-      <Input placeholder="Título" />
+      <Input onChange={(e) => setTitle(e.target.value)} placeholder="Título" />
       <div
         onClick={() => {
           const textContainer = document.getElementById("textContainer");
@@ -94,6 +100,11 @@ const Write = () => {
         id="textContainer"
         className="textContainer"
       ></div>
+
+      <Input
+        onChange={(e) => setCategorie(e.target.value)}
+        placeholder="Categoria"
+      />
 
       <button onClick={handlePost}>Postar</button>
     </Content>
