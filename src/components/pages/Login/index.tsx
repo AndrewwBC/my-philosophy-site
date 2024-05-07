@@ -18,6 +18,7 @@ const Login = () => {
   useEffect(() => {
     setIsLoading(true);
     if (localStorage.getItem("token")) {
+      nav("/in/feed");
     }
     setIsLoading(false);
   });

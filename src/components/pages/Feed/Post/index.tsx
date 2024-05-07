@@ -1,24 +1,69 @@
+import { useEffect, useState } from "react";
 import { Content } from "./styles";
+import Loading from "../../../Loading";
 
 const Post = () => {
-  return (
-    <Content>
-      <div>
-        <p className="date">Postagem realizada em 25/10/2023</p>
-      </div>
-      <div>
-        <p className="title">Título</p>
-      </div>
-      <div className="textContainer">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates a
-          numquam, fugiat, nulla eum ea doloribus repudiandae hic ipsam quidem
-          accusantium magni porro quam necessitatibus? Accusantium nam
-          repellendus odit possimus.
-        </p>
-      </div>
-    </Content>
-  );
+  interface PostProps {
+    id: string;
+    created_at: string;
+    title: string;
+    categorie: string;
+    text_paragraph: [
+      {
+        text: string;
+      }
+    ];
+  }
+  const [post, setPost] = useState<PostProps>();
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    getPost();
+  }, []);
+
+  async function getPost() {
+    const queryParameters = new URLSearchParams(window.location.search);
+    const postId = queryParameters.get("id");
+    try {
+      setIsLoading(!isLoading);
+      const request = await fetch(
+        `https://my-philosophy-backend.onrender.com/getPost?id=${postId}`
+      );
+      const response = await request.json();
+      setPost(response[0]);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setIsLoading(!isLoading);
+    }
+  }
+
+  console.log(post);
+
+  if (!post) return <Loading />;
+  else
+    return (
+      <Content>
+        <div>
+          <p className="date">Postagem realizada em {post.created_at}</p>
+        </div>
+        <div>
+          <p className="title">{post.title}</p>
+        </div>
+        <div className="textContainer">
+          {post.text_paragraph.map((item) => {
+            return (
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
+                magni aspernatur incidunt expedita tenetur. Quisquam fuga, natus
+                accusantium ut laboriosam quod consectetur facilis minima
+                aspernatur exercitationem incidunt sed, excepturi rerum!
+              </p>
+            );
+          })}
+        </div>
+      </Content>
+    );
 };
 
 export default Post;

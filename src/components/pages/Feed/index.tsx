@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Nav, Post } from "./styles";
 import { getPosts } from "./api";
 import Loading from "../../Loading";
+import { useNavigate } from "react-router-dom";
 
 const Feed = () => {
   interface PostsProps {
@@ -19,12 +20,18 @@ const Feed = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [filteredByCategories, setFilteredByCategories] = useState("");
 
+  const nav = useNavigate();
+
   useEffect(() => {
     getPosts(setPosts, setIsLoading);
     return;
   }, []);
 
   console.log(posts);
+
+  function handleClick(postId: string) {
+    nav(`/in/feed/post?id=${postId}`);
+  }
 
   return (
     <>
@@ -49,7 +56,7 @@ const Feed = () => {
         posts.map((item) => {
           if (filteredByCategories && item.categorie === filteredByCategories) {
             return (
-              <Post>
+              <Post onClick={() => handleClick(item.id)}>
                 <div className="titleAndDate">
                   <span>Postagem realizada em {item.created_at}</span>
                   <p>{item.title}</p>
@@ -66,7 +73,7 @@ const Feed = () => {
             );
           } else if (!filteredByCategories) {
             return (
-              <Post>
+              <Post onClick={() => handleClick(item.id)}>
                 <div className="titleAndDate">
                   <span>Postagem realizada em {item.created_at}</span>
                   <p>{item.title}</p>

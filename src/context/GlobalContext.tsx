@@ -9,12 +9,14 @@ import {
 interface StateProps {
   name: string;
   darkTheme: boolean;
+  token: string;
 }
 
 interface ContextProps {
   data: {
     name: string;
     darkTheme: boolean;
+    token: string;
   };
   setData: Dispatch<SetStateAction<StateProps>>;
 }
@@ -23,6 +25,7 @@ export const UserContext = createContext<ContextProps>({
   data: {
     name: "",
     darkTheme: false,
+    token: "",
   },
   setData: useState,
 });
@@ -35,8 +38,12 @@ export function GlobalContext({ children }: GlobalContextProps) {
   const [data, setData] = useState<StateProps>({
     name: "",
     darkTheme: false,
+    token: "",
   });
 
+  if (localStorage.getItem("token") && !data.token) {
+    setData({ token: localStorage.getItem("token") });
+  }
   return (
     <UserContext.Provider value={{ data, setData }}>
       {children}

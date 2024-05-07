@@ -16,6 +16,8 @@ export const Content = styled.section`
   }
 
   .textContainer {
+    display: flex;
+    align-items: flex-start;
     p {
       font-size: 18px;
       letter-spacing: 0.6px;

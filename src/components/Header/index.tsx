@@ -19,13 +19,13 @@ const Header = () => {
               <Link to="/in/contact">Contato</Link>
             </li>
 
-            {!data.name ? (
+            {data.token ? (
               <li>
-                <Link to="/in/login">Logar</Link>
+                <Link to="/in/auth/write">Postar</Link>
               </li>
             ) : (
               <li>
-                <Link to="/in/auth/write">Postar</Link>
+                <Link to="/in/login">Logar</Link>
               </li>
             )}
           </ul>
