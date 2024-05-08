@@ -6,7 +6,7 @@ import Loading from "../../Loading";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { data, setData } = useContext(UserContext);
+  const { setData } = useContext(UserContext);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",

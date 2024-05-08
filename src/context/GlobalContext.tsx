@@ -7,16 +7,16 @@ import {
 } from "react";
 
 interface StateProps {
-  name: string;
-  darkTheme: boolean;
-  token: string;
+  name?: string;
+  darkTheme?: boolean;
+  token?: string;
 }
 
 interface ContextProps {
   data: {
-    name: string;
-    darkTheme: boolean;
-    token: string;
+    name?: string;
+    darkTheme?: boolean;
+    token?: string;
   };
   setData: Dispatch<SetStateAction<StateProps>>;
 }
@@ -42,7 +42,9 @@ export function GlobalContext({ children }: GlobalContextProps) {
   });
 
   if (localStorage.getItem("token") && !data.token) {
-    setData({ token: localStorage.getItem("token") });
+    const token = localStorage.getItem("token") as string;
+
+    setData({ token });
   }
   return (
     <UserContext.Provider value={{ data, setData }}>
