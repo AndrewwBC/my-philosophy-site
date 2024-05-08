@@ -42,14 +42,7 @@ const Write = () => {
 
     console.log(textContainer?.lastChild);
   }
-  interface CustomKeyboardEvent extends KeyboardEvent {
-    currentTarget: {
-      id: string;
-      addEventListener: () => void;
-      dispatchEvent: () => boolean;
-      removeEventListener: () => void;
-    };
-  }
+
   function handleKeyDown(e: any) {
     const textContainer = document.getElementById("textContainer");
 
