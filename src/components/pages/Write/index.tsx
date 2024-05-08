@@ -50,7 +50,7 @@ const Write = () => {
       removeEventListener: () => void;
     };
   }
-  function handleKeyDown(e: CustomKeyboardEvent) {
+  function handleKeyDown(e: any) {
     const textContainer = document.getElementById("textContainer");
 
     if (e.key === "Enter") {
