@@ -33,6 +33,14 @@ const Feed = () => {
     nav(`/in/feed/post?id=${postId}`);
   }
 
+  function handleCategories(categorie: string) {
+    if (categorie != filteredByCategories) {
+      setFilteredByCategories(categorie);
+    } else {
+      setFilteredByCategories("");
+    }
+  }
+
   return (
     <>
       <header>
@@ -40,9 +48,7 @@ const Feed = () => {
           {posts.map(({ categorie }, index) => (
             <li
               key={index}
-              onClick={(e) =>
-                setFilteredByCategories(e.currentTarget.textContent!)
-              }
+              onClick={(e) => handleCategories(e.currentTarget.textContent!)}
             >
               {categorie}
             </li>

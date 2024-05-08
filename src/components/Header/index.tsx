@@ -9,7 +9,9 @@ const Header = () => {
   return (
     <header>
       <Content>
-        <Link to="/">φιλοσοφία</Link>
+        <Link className="logo" to="/">
+          <p>φιλοσοφία</p>
+        </Link>
         <nav>
           <ul>
             <li>

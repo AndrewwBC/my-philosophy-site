@@ -8,3 +8,8 @@ export const OutletContainer = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
+
+export const AthensImg = styled.img`
+  min-height: 120px;
+  object-fit: cover;
+`;

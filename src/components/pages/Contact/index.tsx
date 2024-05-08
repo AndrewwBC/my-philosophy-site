@@ -24,7 +24,9 @@ const Contact = () => {
       <ul>
         {listOfLinks.map((item) => (
           <li>
-            <a href={item.href}>{item.text}</a>
+            <a href={item.href} target="_blank">
+              {item.text}
+            </a>
           </li>
         ))}
       </ul>

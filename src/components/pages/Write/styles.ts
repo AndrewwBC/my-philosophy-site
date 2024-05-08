@@ -7,6 +7,7 @@ export const Content = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 0px 12px;
 
   p {
     border-bottom: 1px solid grey;

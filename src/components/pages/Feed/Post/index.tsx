@@ -52,14 +52,7 @@ const Post = () => {
         </div>
         <div className="textContainer">
           {post.text_paragraph.map((item) => {
-            return (
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio
-                magni aspernatur incidunt expedita tenetur. Quisquam fuga, natus
-                accusantium ut laboriosam quod consectetur facilis minima
-                aspernatur exercitationem incidunt sed, excepturi rerum!
-              </p>
-            );
+            return <p>{item.text}</p>;
           })}
         </div>
       </Content>

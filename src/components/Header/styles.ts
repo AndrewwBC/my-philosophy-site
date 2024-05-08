@@ -8,6 +8,11 @@ export const Content = styled.div`
   padding: 16px 0px;
   margin: 0 auto;
 
+  .logo p {
+    padding-left: 18px;
+    font-size: 24px;
+  }
+
   p {
     font-size: 18px;
   }
@@ -16,6 +21,10 @@ export const Content = styled.div`
     display: flex;
     flex-direction: row;
     gap: 24px;
+
+    @media (max-width: 600px) {
+      gap: 4px;
+    }
   }
 
   li a {

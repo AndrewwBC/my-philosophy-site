@@ -5,20 +5,26 @@ export const Content = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 240px;
+  margin-top: 260px;
 
   .title {
     font-size: 32px;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
     border-bottom: 1px solid #b9b9b9;
   }
 
   button {
     background-color: #c175ff;
-    padding: 12px 32px;
+    padding: 12px 40px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    color: #f9f9f9;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #c175bb;
+    }
   }
 `;
