@@ -24,7 +24,7 @@ const Feed = () => {
 
   useEffect(() => {
     getPosts(setPosts, setIsLoading);
-    return;
+    return () => console.log("fechou");
   }, []);
 
   console.log(posts);

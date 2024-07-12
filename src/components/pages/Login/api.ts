@@ -18,7 +18,7 @@ export async function login(userData: userDataProps, setIsLoading: any) {
     );
 
     const response = await request.json();
-    localStorage.setItem("token", response.token);
+    if (response.token) localStorage.setItem("token", response.token);
 
     console.log(response);
     return { token: response.token };
