@@ -41,63 +41,67 @@ const Feed = () => {
     }
   }
 
-  return (
-    <>
-      <header>
-        <Nav>
-          {posts.map(({ categorie }, index) => (
-            <li
-              key={index}
-              onClick={(e) => handleCategories(e.currentTarget.textContent!)}
-            >
-              {categorie}
-            </li>
-          ))}
-        </Nav>
-      </header>
+  if (posts)
+    return (
+      <>
+        <header>
+          <Nav>
+            {posts.map(({ categorie }, index) => (
+              <li
+                key={index}
+                onClick={(e) => handleCategories(e.currentTarget.textContent!)}
+              >
+                {categorie}
+              </li>
+            ))}
+          </Nav>
+        </header>
 
-      {isLoading && <Loading />}
+        {isLoading && <Loading />}
 
-      {posts &&
-        posts.map((item) => {
-          if (filteredByCategories && item.categorie === filteredByCategories) {
-            return (
-              <Post onClick={() => handleClick(item.id)}>
-                <div className="titleAndDate">
-                  <span>Postagem realizada em {item.created_at}</span>
-                  <p>{item.title}</p>
-                </div>
-                <div className="textContent">
-                  {item.text_paragraph.map(({ text }) => (
-                    <p>{text}</p>
-                  ))}
-                </div>
-                <div className="categories">
-                  <p>#{item.categorie}</p>
-                </div>
-              </Post>
-            );
-          } else if (!filteredByCategories) {
-            return (
-              <Post onClick={() => handleClick(item.id)}>
-                <div className="titleAndDate">
-                  <span>Postagem realizada em {item.created_at}</span>
-                  <p>{item.title}</p>
-                </div>
-                <div className="textContent">
-                  {item.text_paragraph.map(({ text }) => (
-                    <p>{text}</p>
-                  ))}
-                </div>
-                <div className="categories">
-                  <p>#{item.categorie}</p>
-                </div>
-              </Post>
-            );
-          }
-        })}
-    </>
-  );
+        {posts &&
+          posts.map((item) => {
+            if (
+              filteredByCategories &&
+              item.categorie === filteredByCategories
+            ) {
+              return (
+                <Post onClick={() => handleClick(item.id)}>
+                  <div className="titleAndDate">
+                    <span>Postagem realizada em {item.created_at}</span>
+                    <p>{item.title}</p>
+                  </div>
+                  <div className="textContent">
+                    {item.text_paragraph.map(({ text }) => (
+                      <p>{text}</p>
+                    ))}
+                  </div>
+                  <div className="categories">
+                    <p>#{item.categorie}</p>
+                  </div>
+                </Post>
+              );
+            } else if (!filteredByCategories) {
+              return (
+                <Post onClick={() => handleClick(item.id)}>
+                  <div className="titleAndDate">
+                    <span>Postagem realizada em {item.created_at}</span>
+                    <p>{item.title}</p>
+                  </div>
+                  <div className="textContent">
+                    {item.text_paragraph.map(({ text }) => (
+                      <p>{text}</p>
+                    ))}
+                  </div>
+                  <div className="categories">
+                    <p>#{item.categorie}</p>
+                  </div>
+                </Post>
+              );
+            }
+          })}
+      </>
+    );
 };
 
 export default Feed;
