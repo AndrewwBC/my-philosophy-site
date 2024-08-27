@@ -1,29 +1,33 @@
 import { useEffect, useState } from "react";
 import { Nav, Post } from "./styles";
 import { getPosts } from "./api";
-import Loading from "../../Loading";
+import Loading from "../../components/Loading";
 import { useNavigate } from "react-router-dom";
 
 const Feed = () => {
   interface PostsProps {
     id: string;
-    created_at: string;
     title: string;
-    text_paragraph: [
-      {
-        text: string;
-      }
-    ];
+    text: string;
+    created_at: string;
     categorie: string;
   }
-  const [posts, setPosts] = useState<PostsProps[]>([]);
+  const [posts, setPosts] = useState<PostsProps[]>([
+    {
+      id: "1565",
+      categorie: "grécia",
+      created_at: "20/05/2024",
+      text: "Platão foi um filósofo Platão foi um filósofo Platão foi um filósofo Platão foi um filósofo Platão foi um filósofo Platão foi um filósofo Platão foi um filósofo Platão foi um filósofo",
+      title: "Platão",
+    },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const [filteredByCategories, setFilteredByCategories] = useState("");
 
   const nav = useNavigate();
 
   useEffect(() => {
-    getPosts(setPosts, setIsLoading);
+    // getPosts(setPosts, setIsLoading);
     return () => console.log("fechou");
   }, []);
 
@@ -38,6 +42,31 @@ const Feed = () => {
       setFilteredByCategories(categorie);
     } else {
       setFilteredByCategories("");
+    }
+  }
+
+  async function handlePostDelete(postId: string) {
+    const data = { postId };
+    const getTokenFromStorage = localStorage.getItem("token");
+
+    const url = {
+      local: "http://localhost:8081/deletePost",
+      nuvem: "https://my-philosophy-backend.onrender.com/deletePost",
+    };
+
+    try {
+      const request = await fetch(url.local, {
+        method: "delete",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${getTokenFromStorage}`,
+        },
+        body: JSON.stringify(data),
+      });
+
+      console.log(request);
+    } catch (err) {
+      console.log(err);
     }
   }
 
@@ -72,9 +101,10 @@ const Feed = () => {
                     <p>{item.title}</p>
                   </div>
                   <div className="textContent">
-                    {item.text_paragraph.map(({ text }) => (
-                      <p>{text}</p>
-                    ))}
+                    <textarea
+                      readOnly
+                      value={item.text.slice(0, 160).concat("...")}
+                    />
                   </div>
                   <div className="categories">
                     <p>#{item.categorie}</p>
@@ -83,15 +113,17 @@ const Feed = () => {
               );
             } else if (!filteredByCategories) {
               return (
-                <Post onClick={() => handleClick(item.id)}>
+                <Post>
                   <div className="titleAndDate">
                     <span>Postagem realizada em {item.created_at}</span>
+
                     <p>{item.title}</p>
                   </div>
                   <div className="textContent">
-                    {item.text_paragraph.map(({ text }) => (
-                      <p>{text}</p>
-                    ))}
+                    <textarea
+                      readOnly
+                      value={item.text.slice(0, 160).concat("...")}
+                    />
                   </div>
                   <div className="categories">
                     <p>#{item.categorie}</p>

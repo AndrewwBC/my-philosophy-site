@@ -5,12 +5,12 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0px;
+  padding: 12px 0px;
   margin: 0 auto;
 
   .logo p {
     padding-left: 18px;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   p {

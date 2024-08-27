@@ -6,7 +6,7 @@ const Home = () => {
     <main>
       <Content>
         <h1 className="title">Estudos em Filosofia</h1>
-        <Link to="in/feed">
+        <Link to="/feed">
           <button>Acesse</button>
         </Link>
       </Content>

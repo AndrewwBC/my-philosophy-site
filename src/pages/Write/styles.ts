@@ -1,13 +1,42 @@
 import styled from "styled-components";
 
 export const Content = styled.section`
+  max-width: 800px;
+  margin: 32px auto;
+  width: 100%;
   display: flex;
-  align-items: center;
+  gap: 12px;
   justify-content: center;
   flex-direction: column;
+  padding: 0px 12px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 
   p {
-    font-size: 24px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+    max-width: max-content;
+    font-size: 18px;
+  }
+
+  textarea {
+    resize: none;
+    border: none;
+    padding: 6px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    background-color: ${({ theme }) => theme.neutral.c3};
+    border-radius: 4px;
+
+    &:focus {
+      border: 2px solid ${({ theme }) => theme.purple.light};
+      background-color: ${({ theme }) => theme.neutral.c1};
+    }
   }
 
   button {
@@ -21,14 +50,6 @@ export const Content = styled.section`
     &:disabled {
       background-color: #999;
     }
-  }
-
-  form {
-    display: flex;
-    gap: 12px;
-    flex-direction: column;
-    min-width: 260px;
-    margin-top: 12px;
   }
 `;
 
@@ -48,6 +69,7 @@ export const Input = styled.input`
 
   &:focus {
     border: 2px solid ${({ theme }) => theme.purple.light};
+    background-color: ${({ theme }) => theme.neutral.c1};
   }
 
   &:active {

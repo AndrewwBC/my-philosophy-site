@@ -1,26 +1,24 @@
-export async function postAPI(
-  title: string,
-  textOfEachParagraph: any,
-  categories: any
-) {
-  const data = { title, textOfEachParagraph, categories };
+import axios from "axios";
+import { PostDataProps } from "./types";
 
+export async function postAPI(postData: PostDataProps) {
   const getTokenFromStorage = localStorage.getItem("token");
 
+  console.log(postData);
+
   try {
-    const request = await fetch(
-      "https://my-philosophy-backend.onrender.com/createPost",
+    const request = await axios.post(
+      "http://localhost:8181/post/create",
+      postData,
       {
-        method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${getTokenFromStorage}`,
         },
-        body: JSON.stringify(data),
       }
     );
 
-    const response = await request.json();
+    const response = await request.data;
     console.log(response);
   } catch (error) {
     console.log(error);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Content } from "./styles";
-import Loading from "../../../Loading";
+import Loading from "../../../components/Loading";
+import axios from "axios";
 
 const Post = () => {
   interface PostProps {
@@ -26,34 +27,37 @@ const Post = () => {
     const postId = queryParameters.get("id");
     try {
       setIsLoading(!isLoading);
-      const request = await fetch(
-        `https://my-philosophy-backend.onrender.com/getPost?id=${postId}`
+
+      const request = await axios.get(
+        `http://localhost:8181/post/show/${postId}`
       );
-      const response = await request.json();
-      setPost(response[0]);
+      const response = await request.data;
+
+      setPost(response.postList);
     } catch (err) {
       console.log(err);
     } finally {
       setIsLoading(!isLoading);
+      const textArea = document.getElementById("textArea")!;
+      textArea.style.height = textArea.scrollHeight + "px";
     }
   }
 
-  console.log(post);
-
-  if (!post) return <Loading />;
-  else
+  if (post)
     return (
       <Content>
         <div>
-          <p className="date">Postagem realizada em {post.created_at}</p>
+          <p className="date">Postagem realizada em 10/10/2024</p>
         </div>
         <div>
-          <p className="title">{post.title}</p>
+          <p className="title">Platão</p>
         </div>
         <div className="textContainer">
-          {post.text_paragraph.map((item) => {
-            return <p>{item.text}</p>;
-          })}
+          <textarea
+            id="textArea"
+            value={post[0].post ? post[0].post : ""}
+            readOnly
+          ></textarea>
         </div>
       </Content>
     );

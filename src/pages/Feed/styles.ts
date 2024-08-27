@@ -4,6 +4,10 @@ export const Nav = styled.nav`
   display: flex;
   gap: 12px;
   margin-bottom: 32px;
+
+  li {
+    cursor: pointer;
+  }
 `;
 
 export const Post = styled.section`
@@ -39,6 +43,17 @@ export const Post = styled.section`
   }
 
   .textContent {
+    textarea {
+      resize: none;
+      border: none;
+      font-size: 16px;
+      color: #a9a9a9;
+      background-color: inherit;
+      width: 100%;
+      overflow: hidden;
+      height: max-content;
+    }
+
     p {
       color: #222;
     }

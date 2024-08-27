@@ -9,25 +9,25 @@ const Header = () => {
   return (
     <header>
       <Content>
-        <Link className="logo" to="/">
+        <Link className="logo" to="/feed">
           <p>φιλοσοφία</p>
         </Link>
         <nav>
           <ul>
             <li>
-              <Link to="/in/feed">Feed</Link>
+              <Link to="/feed">Feed</Link>
             </li>
             <li>
-              <Link to="/in/contact">Contato</Link>
+              <Link to="/contact">Contato</Link>
             </li>
 
             {data.token ? (
               <li>
-                <Link to="/in/auth/write">Postar</Link>
+                <Link to="/auth/write">Postar</Link>
               </li>
             ) : (
               <li>
-                <Link to="/in/login">Logar</Link>
+                <Link to="/login">Login</Link>
               </li>
             )}
           </ul>

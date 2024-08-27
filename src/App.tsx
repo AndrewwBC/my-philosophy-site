@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./components/pages/Home";
+import Home from "./pages/Home";
 import "./assets/global.css";
-import Feed from "./components/pages/Feed";
+import Feed from "./pages/Feed";
 import Layout from "./components/Layout";
-import Contact from "./components/pages/Contact";
-import Login from "./components/pages/Login";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./assets/theme";
-import Write from "./components/pages/Write";
-import Post from "./components/pages/Feed/Post";
+import Write from "./pages/Write";
+import Post from "./pages/Feed/Post";
 import { GlobalContext } from "./context/GlobalContext";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -17,14 +18,18 @@ function App() {
       <GlobalContext>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
 
-            <Route path="/in" element={<Layout />}>
-              <Route index path="/in/feed" element={<Feed />} />
-              <Route path="/in/feed/post" element={<Post />} />
-              <Route path="/in/contact" element={<Contact />} />
-              <Route path="/in/login" element={<Login />} />
-              <Route path="/in/auth/write" element={<Write />} />
+            <Route path="/" element={<Layout />}>
+              <Route index path="/feed" element={<Feed />} />
+              <Route path="/feed/post" element={<Post />} />
+
+              <Route path="/contact" element={<Contact />} />
+
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+
+              <Route path="/auth/write" element={<Write />} />
             </Route>
           </Routes>
         </BrowserRouter>
