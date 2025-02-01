@@ -12,15 +12,12 @@ export const Container = styled.div`
     .carouselItem {
       display: flex;
       align-items: center;
-      max-width: 140px;
-      min-width: 140px;
+      margin-right: 32px;
+      width: max-content !important;
 
       div {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
         align-items: center;
-        justify-content: start;
-        justify-self: start;
       }
 
       p {
@@ -28,7 +25,6 @@ export const Container = styled.div`
         color: #333;
         font-weight: 600;
         cursor: pointer;
-
         &:hover {
           color: #000;
         }

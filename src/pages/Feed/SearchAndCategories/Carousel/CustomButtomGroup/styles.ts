@@ -6,7 +6,8 @@ export const CustomButtonGroupContainer = styled.div`
 
   .leftArrow,
   .rightArrow {
+    opacity: 0.8;
     background-color: #fff;
-    box-shadow: 12px 12px 32px #fff; /* Sombrinha sutil */
+    box-shadow: 12px 12px 32px rgba(255, 255, 255, 0.8); /* Sombrinha sutil */
   }
 `;
