@@ -1,15 +1,20 @@
 import styled from "styled-components";
 
+export const HeaderContainer = styled.header`
+  background-color: #f9f9f9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+`;
+
 export const Content = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0px;
+  padding: 20px 0px;
   margin: 0 auto;
+  z-index: 20;
 
   .logo p {
-    padding-left: 18px;
     font-size: 18px;
   }
 
@@ -21,6 +26,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: row;
     gap: 24px;
+    font-size: 18px;
 
     @media (max-width: 600px) {
       gap: 4px;

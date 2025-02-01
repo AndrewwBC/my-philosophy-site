@@ -3,6 +3,7 @@ import { Content, Input } from "./styles";
 import { postAPI } from "./api";
 
 import { PostDataProps } from "./types";
+import MyQuill from "./quill/MyQuill";
 
 const Write = () => {
   const [postData, setPostData] = useState<PostDataProps>({
@@ -14,6 +15,8 @@ const Write = () => {
   function handlePost() {
     if (postData) postAPI(postData);
   }
+  return <MyQuill />;
+
   return (
     <Content>
       <p>Escreva a postagem.</p>
@@ -32,7 +35,7 @@ const Write = () => {
         />
       </label>
 
-      <label>
+      {/* <label>
         Texto
         <textarea
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
@@ -44,7 +47,9 @@ const Write = () => {
           style={{ height: 400 }}
           value={postData?.text}
         />
-      </label>
+      </label> */}
+
+      <MyQuill />
 
       <label>
         Categoria

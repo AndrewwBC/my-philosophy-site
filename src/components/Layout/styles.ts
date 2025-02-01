@@ -1,15 +1,10 @@
 import styled from "styled-components";
 
 export const OutletContainer = styled.div`
-  max-width: 800px;
-  margin: 24px auto;
+  max-width: 1200px;
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-`;
-
-export const AthensImg = styled.img`
-  min-height: 120px;
-  object-fit: cover;
 `;

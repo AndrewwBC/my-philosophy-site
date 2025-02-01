@@ -3,6 +3,7 @@ import {
   ReactNode,
   SetStateAction,
   createContext,
+  useContext,
   useState,
 } from "react";
 
@@ -30,11 +31,11 @@ export const UserContext = createContext<ContextProps>({
   setData: useState,
 });
 
-interface GlobalContextProps {
+interface UserProviderProps {
   children: ReactNode;
 }
 
-export function GlobalContext({ children }: GlobalContextProps) {
+export function UserProvider({ children }: UserProviderProps) {
   const [data, setData] = useState<StateProps>({
     name: "",
     darkTheme: false,
@@ -51,4 +52,8 @@ export function GlobalContext({ children }: GlobalContextProps) {
       {children}
     </UserContext.Provider>
   );
+}
+
+export default function useUser() {
+  return useContext(UserContext);
 }

@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import { Content } from "./styles";
+import { Content, HeaderContainer } from "./styles";
 import { useContext } from "react";
-import { UserContext } from "../../context/GlobalContext";
+import { UserContext } from "../../context/userContext";
 
 const Header = () => {
   const { data } = useContext(UserContext);
 
   return (
-    <header>
+    <HeaderContainer>
       <Content>
-        <Link className="logo" to="/feed">
+        <Link className="logo" to="/home">
           <p>φιλοσοφία</p>
         </Link>
         <nav>
@@ -33,7 +33,7 @@ const Header = () => {
           </ul>
         </nav>
       </Content>
-    </header>
+    </HeaderContainer>
   );
 };
 

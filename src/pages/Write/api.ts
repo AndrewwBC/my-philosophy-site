@@ -27,7 +27,7 @@ export async function postAPI(postData: PostDataProps) {
 
 export async function getAPI() {
   try {
-    const request = await fetch("https://my-philosophy-backend.onrender.com/");
+    const request = await fetch("http://localhost:8181/post/create");
 
     const response = await request.json();
     console.log(response);

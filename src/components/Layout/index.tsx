@@ -1,13 +1,11 @@
 import Header from "../Header";
 import { Outlet } from "react-router-dom";
-import athens from "../../assets/images/athens.jpg";
-import { AthensImg, OutletContainer } from "./styles";
+import { OutletContainer } from "./styles";
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <AthensImg src={athens} />
 
       <OutletContainer>
         <Outlet />

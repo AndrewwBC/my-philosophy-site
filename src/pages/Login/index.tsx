@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
 import { Content } from "./styles";
-import { UserContext } from "../../context/GlobalContext";
+import { UserContext } from "../../context/userContext";
 import { login } from "./api";
 import Loading from "../../components/Loading";
 import { Link, useNavigate } from "react-router-dom";
