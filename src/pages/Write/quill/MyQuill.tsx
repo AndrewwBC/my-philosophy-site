@@ -1,36 +1,24 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Editor from "./Editor";
-import Quill from "quill";
 
 import "./style.css";
-
-const Delta = Quill.import("delta");
+import { MyButton } from "../../../components/button";
 
 const MyQuill = () => {
-  const [range, setRange] = useState();
-  const [test, setTeste] = useState("");
-
-  const quillRef = useRef();
+  const quillRef: any = useRef();
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <Editor ref={quillRef} />
-      <div className="controls">
-        <button
-          className="controls-right"
-          type="button"
-          onClick={() => {
-            console.log(quillRef.current.editor.scroll.domNode.innerHTML);
-            setTeste(quillRef.current.editor.scroll.domNode.innerHTML);
-          }}
-        >
-          Get Content Length
-        </button>
-      </div>
-      <div
-        id="editor"
-        className="ql-editor"
-        dangerouslySetInnerHTML={{ __html: test }}
-      ></div>
+
+      <MyButton
+        type="button"
+        style={{ justifySelf: "center" }}
+        onClick={() => {
+          console.log(quillRef.current.editor);
+        }}
+      >
+        Postar
+      </MyButton>
     </div>
   );
 };

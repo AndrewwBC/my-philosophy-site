@@ -39,7 +39,7 @@ export function UserProvider({ children }: UserProviderProps) {
   const [data, setData] = useState<StateProps>({
     name: "",
     darkTheme: false,
-    token: "",
+    token: "asdasds",
   });
 
   if (localStorage.getItem("token") && !data.token) {

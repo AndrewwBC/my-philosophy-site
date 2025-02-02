@@ -1,5 +1,6 @@
-import { Container, Post } from "./styles";
 import { useState } from "react";
+import PostCard from "./PostCard";
+import { Container } from "./styles";
 
 function Posts() {
   interface PostsProps {
@@ -32,39 +33,13 @@ function Posts() {
       title: "Platão e o mito da caverna",
     },
   ]);
-
-  if (posts)
-    return (
-      <Container>
-        {posts.map((item) => {
-          return (
-            <Post>
-              <div className="textContent">
-                <div className="titleAndDate">
-                  <span>Postagem realizada em {item.created_at}</span>
-                  <p>{item.title}</p>
-                </div>
-                <div className="preview">
-                  <textarea
-                    readOnly
-                    value={item.text.slice(0, 160).concat("...")}
-                  />
-                </div>
-                <div className="categories">
-                  <p>#{item.categorie}</p>
-                </div>
-              </div>
-              <div className="postImage">
-                <img
-                  src="https://media.istockphoto.com/id/1066705000/pt/foto/classic-statues-plato-close-up.jpg?s=612x612&w=0&k=20&c=MDZVFXOgsaezaB2lo--daz9ziXJrbdmGoCqUo-kcWgA="
-                  alt=""
-                />
-              </div>
-            </Post>
-          );
-        })}
-      </Container>
-    );
+  return (
+    <Container>
+      {posts.map((item) => {
+        return <PostCard item={item} />;
+      })}
+    </Container>
+  );
 }
 
 export default Posts;

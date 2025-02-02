@@ -27,11 +27,12 @@ export const SearchContainer = styled.div`
 
   .searchIcon {
     cursor: pointer;
+    padding-left: 4px;
   }
 
   input {
     border: none;
-    padding: 8px;
+    padding: 12px;
     border-radius: 10px;
     background-color: inherit;
     width: 100%;

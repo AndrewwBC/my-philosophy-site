@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import Posts from "./Posts";
 import { Container } from "./styles";
 import SearchAndCategories from "./SearchAndCategories";
+import Popular from "./RightSide/Popular";
 
 const Feed = () => {
   useEffect(() => {
@@ -10,13 +11,16 @@ const Feed = () => {
 
   return (
     <Container>
-      <div className="firstChild">
+      <div>
         <SearchAndCategories />
 
         <Posts />
+      </div>
+      <div>
+        <Popular />
       </div>
     </Container>
   );
 };
 
-export default Feed;
+export default memo(Feed);

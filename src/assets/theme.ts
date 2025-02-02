@@ -16,6 +16,11 @@ export const theme = {
     medium: "#7b44ff",
     dark: "#581de6",
   },
+  green: {
+    light: "#E5F5B7",
+    medium: "#C3DA8C",
+    dark: "#437512",
+  },
   yellow: {
     light: "#f6bb00",
     medium: "#e6bb52",

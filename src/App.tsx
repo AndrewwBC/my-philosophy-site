@@ -10,6 +10,7 @@ import { theme } from "./assets/theme";
 import Write from "./pages/Write";
 import Register from "./pages/Register";
 import { UserProvider } from "./context/userContext";
+import Post from "./pages/Feed/Posts/Post";
 
 function App() {
   return (
@@ -17,9 +18,11 @@ function App() {
       <UserProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/" element={<Layout />}>
               <Route index path="/feed" element={<Feed />} />
+
+              <Route index path="/post" element={<Post />} />
 
               <Route path="/contact" element={<Contact />} />
 

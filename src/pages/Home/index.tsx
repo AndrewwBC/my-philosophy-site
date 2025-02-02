@@ -16,7 +16,9 @@ const Home = () => {
             <button>Acessar</button>
           </Link>
         </TextDiv>
-        <AthensImg src={athensImg} />
+        <div>
+          <AthensImg src={athensImg} />
+        </div>
       </Main>
     </>
   );

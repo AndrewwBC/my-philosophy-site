@@ -23,7 +23,7 @@ const Editor = forwardRef(
       );
 
       const toolbarOptions = [
-        [{ size: ["small", false, "large", "huge"] }], // custom dropdown
+        [{ size: ["small", "large", "huge"] }], // custom dropdown
 
         ["bold", "italic", "underline", "strike"], // toggled buttons
 

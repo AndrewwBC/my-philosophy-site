@@ -21,7 +21,15 @@ from {
 
 export const AthensImg = styled.img`
   position: absolute;
-  object-fit: contain;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 200px;
+  min-height: 768px;
+  object-fit: cover;
   z-index: -10;
   animation: ${brightOut} 4s forwards;
 `;
@@ -31,10 +39,8 @@ export const TextDiv = styled.div`
   width: 100%;
   margin: 0 auto;
   display: flex;
-  align-items: start;
-  justify-content: start;
-  color: #fff;
   flex-direction: column;
+  color: #fff;
 
   z-index: 10;
 
@@ -43,6 +49,7 @@ export const TextDiv = styled.div`
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #b9b9b9;
+    width: max-content;
   }
 
   button {

@@ -10,12 +10,14 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0px;
+  padding: 18px 0px;
   margin: 0 auto;
   z-index: 20;
 
   .logo p {
     font-size: 18px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
   }
 
   p {
@@ -24,6 +26,7 @@ export const Content = styled.div`
 
   nav ul {
     display: flex;
+    align-items: center;
     flex-direction: row;
     gap: 24px;
     font-size: 18px;
@@ -33,10 +36,14 @@ export const Content = styled.div`
     }
   }
 
-  li a {
+  li {
+    display: flex;
+    align-items: center;
     padding: 4px 12px;
     border-radius: 4px;
     color: #222;
+    cursor: pointer;
+
     &:hover {
       background-color: #811180;
       color: #f9f9f9;
