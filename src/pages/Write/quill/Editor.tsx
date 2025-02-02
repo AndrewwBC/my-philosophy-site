@@ -5,20 +5,16 @@ import { EditorDiv } from "./styles";
 
 // Editor is an uncontrolled React component
 const Editor = forwardRef(
-  ({ readOnly, defaultValue, onTextChange, onSelectionChange }, ref) => {
-    const containerRef = useRef(null);
-    const defaultValueRef = useRef(defaultValue);
-    const onTextChangeRef = useRef(onTextChange);
-    const onSelectionChangeRef = useRef(onSelectionChange);
+  ({ defaultValue, onTextChange, onSelectionChange }: any, ref: any) => {
+    const containerRef: any = useRef(null);
+    const defaultValueRef: any = useRef(defaultValue);
+    const onTextChangeRef: any = useRef(onTextChange);
+    const onSelectionChangeRef: any = useRef(onSelectionChange);
 
     useLayoutEffect(() => {
       onTextChangeRef.current = onTextChange;
       onSelectionChangeRef.current = onSelectionChange;
     });
-
-    useEffect(() => {
-      ref.current?.enable(!readOnly);
-    }, [ref, readOnly]);
 
     useEffect(() => {
       const container = containerRef.current;
@@ -55,7 +51,7 @@ const Editor = forwardRef(
         },
       });
 
-      ref.current = quill;
+      ref!.current = quill;
 
       if (defaultValueRef.current) {
         quill.setContents(defaultValueRef.current);
@@ -70,7 +66,7 @@ const Editor = forwardRef(
       });
 
       return () => {
-        ref.current = null;
+        ref!.current = null;
         container.innerHTML = "";
       };
     }, [ref]);

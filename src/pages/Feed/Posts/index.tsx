@@ -9,7 +9,7 @@ function Posts() {
     created_at: string;
     categorie: string;
   }
-  const [posts, setPosts] = useState<PostsProps[]>([
+  const [posts] = useState<PostsProps[]>([
     {
       id: "1565",
       categorie: "grécia",
