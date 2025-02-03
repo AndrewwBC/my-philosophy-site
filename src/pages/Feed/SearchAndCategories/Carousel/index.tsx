@@ -3,8 +3,27 @@ import "react-multi-carousel/lib/styles.css";
 import { Container } from "./styles";
 import { responsive } from "./responsive";
 import CustomButtomGroup from "./CustomButtomGroup";
+import { useNavigate } from "react-router-dom";
 
 function Categories() {
+  const to = useNavigate();
+
+  const categoryList = [
+    "Aristóteles",
+    "Medieval",
+    "Cristianismo",
+    "Pré-Socrático",
+    "Estoicismo",
+    "Existencialismo",
+    "Platonismo",
+    "Platão",
+    "Modernismo",
+  ];
+
+  function handleCategoryClick(category: String) {
+    to(`/feed?category=${category.toLowerCase()}`);
+  }
+
   return (
     <Container>
       <Carousel
@@ -17,33 +36,11 @@ function Categories() {
         itemClass="carouselItem"
         arrows={false}
       >
-        <div>
-          <p>Aristóteles</p>
-        </div>
-        <div>
-          <p>Medieval</p>
-        </div>
-        <div>
-          <p>Cristianismo</p>
-        </div>
-        <div>
-          <p>Pré-Socrático</p>
-        </div>
-        <div>
-          <p>Estoicismo</p>
-        </div>
-        <div>
-          <p>Existencialismo</p>
-        </div>
-        <div>
-          <p>Platonismo</p>
-        </div>
-        <div>
-          <p>Platão</p>
-        </div>
-        <div>
-          <p>Modernismo</p>
-        </div>
+        {categoryList.map((category) => (
+          <div onClick={() => handleCategoryClick(category)}>
+            <p>{category}</p>
+          </div>
+        ))}
       </Carousel>
     </Container>
   );

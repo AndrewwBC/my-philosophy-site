@@ -1,12 +1,12 @@
 import { Card, ProfileAndCreationDate } from "./styles";
 
 import Green from "../../../../components/Green";
-import myUseNavigate from "../../../../utils/useNavigate";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
 import { PostTitle } from "../../../../components/postTitle";
+import { useNavigate } from "react-router-dom";
 
 function PostCard({ item }: any) {
-  const { to } = myUseNavigate();
+  const to = useNavigate();
 
   function handleCardClick() {
     to("/post");

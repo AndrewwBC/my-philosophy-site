@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const WriteContainer = styled.section`
   height: 100vh;
+  width: 100%;
 
   .content {
     display: flex;
@@ -9,6 +10,7 @@ export const WriteContainer = styled.section`
     align-items: center;
     justify-content: start;
     padding-top: 32px;
+    max-width: 100%;
 
     .text {
       margin-bottom: 24px;

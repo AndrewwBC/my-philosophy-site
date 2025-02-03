@@ -1,11 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { PostTitle } from "../../../../components/postTitle";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
-import myUseNavigate from "../../../../utils/useNavigate";
 import { PopularCard, PopularContainer } from "./styles";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 function Popular() {
-  const { to } = myUseNavigate();
+  const to = useNavigate();
 
   function handleCardClick() {
     to("/post");

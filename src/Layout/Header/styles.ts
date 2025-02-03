@@ -15,7 +15,7 @@ export const Content = styled.div`
   z-index: 20;
 
   @media (max-width: 1200px) {
-    padding: 18px 8px;
+    padding: 18px 12px;
   }
 
   .logo p {

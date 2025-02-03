@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Content, HeaderContainer } from "./styles";
 import { useContext } from "react";
 import { UserContext } from "../../context/userContext";
@@ -6,6 +6,11 @@ import { IoCreateOutline } from "react-icons/io5";
 
 const Header = () => {
   const { data } = useContext(UserContext);
+  const to = useNavigate();
+
+  function handleTo(path: string) {
+    to(path);
+  }
 
   return (
     <HeaderContainer>
@@ -15,18 +20,18 @@ const Header = () => {
         </Link>
         <nav>
           <ul>
-            <li>
-              <Link to="/feed">Feed</Link>
+            <li onClick={() => handleTo("/feed")}>
+              <span>Feed</span>
             </li>
 
             {data.token ? (
-              <li>
+              <li onClick={() => handleTo("/auth/write")}>
                 <IoCreateOutline className="penIcon" size={26} />
-                <Link to="/auth/write">Postar</Link>
+                <span>Postar</span>
               </li>
             ) : (
-              <li>
-                <Link to="/login">Login</Link>
+              <li onClick={() => handleTo("/login")}>
+                <span>Login</span>
               </li>
             )}
           </ul>

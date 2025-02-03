@@ -6,7 +6,7 @@ const Write = () => {
     <WriteContainer>
       <div className="content">
         <div className="text">
-          <p>Digite ou insira o conteúdo</p>
+          <p>Digite ou cole o conteúdo</p>
         </div>
         <div>
           <MyQuill />

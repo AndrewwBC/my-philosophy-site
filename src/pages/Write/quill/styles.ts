@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const EditorDiv = styled.div`
-  width: 640px;
-  max-width: 800px;
-  min-width: 400px;
+  max-width: 720px;
+  min-width: 200px;
   height: 100%;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 90vw;
+  }
 `;
