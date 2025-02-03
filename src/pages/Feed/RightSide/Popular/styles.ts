@@ -7,10 +7,18 @@ export const PopularContainer = styled.article`
   align-items: start;
   flex-direction: column;
 
+  @media (max-width: 768px) {
+    margin-bottom: 80px;
+    margin-top: 16px;
+    padding-left: 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding-top: 32px;
+  }
+
   .titleContainer {
     p {
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 48px;
     }
   }

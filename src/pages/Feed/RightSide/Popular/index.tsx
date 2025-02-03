@@ -1,3 +1,4 @@
+import { PostTitle } from "../../../../components/postTitle";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
 import myUseNavigate from "../../../../utils/useNavigate";
 import { PopularCard, PopularContainer } from "./styles";
@@ -28,9 +29,9 @@ function Popular() {
               <span>2342 views</span>
             </div>
           </div>
-          <div className="postTitleContainer">
+          <PostTitle typeoftitle="popularCard">
             <p>Platão e o mito da Caverna</p>
-          </div>
+          </PostTitle>
         </div>
       </PopularCard>
     </PopularContainer>

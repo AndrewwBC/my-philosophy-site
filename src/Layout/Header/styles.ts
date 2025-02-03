@@ -10,14 +10,22 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0px;
+  padding: 16px 0px;
   margin: 0 auto;
   z-index: 20;
+
+  @media (max-width: 1200px) {
+    padding: 18px 8px;
+  }
 
   .logo p {
     font-size: 18px;
     font-weight: 600;
     font-family: "Nunito Sans", sans-serif;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 
   p {
@@ -31,9 +39,17 @@ export const Content = styled.div`
     gap: 24px;
     font-size: 18px;
 
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
     @media (max-width: 600px) {
       gap: 4px;
     }
+  }
+
+  li .penIcon {
+    margin-bottom: 2px;
   }
 
   li {

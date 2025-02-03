@@ -21,7 +21,7 @@ const Header = () => {
 
             {data.token ? (
               <li>
-                <IoCreateOutline size={26} />
+                <IoCreateOutline className="penIcon" size={26} />
                 <Link to="/auth/write">Postar</Link>
               </li>
             ) : (

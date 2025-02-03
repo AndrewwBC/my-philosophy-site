@@ -50,6 +50,11 @@ export const TextDiv = styled.div`
     padding-bottom: 24px;
     border-bottom: 1px solid #b9b9b9;
     width: max-content;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+      padding-left: 8px;
+    }
   }
 
   button {

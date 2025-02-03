@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { AthensImg, Main, TextDiv } from "./styles";
 
 import athensImg from "../../assets/images/athens.jpg";
-import Header from "../../components/Header";
+import Header from "../../Layout/Header";
 
 const Home = () => {
   return (

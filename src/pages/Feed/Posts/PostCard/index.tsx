@@ -1,8 +1,9 @@
-import { Card, PostTitle, ProfileAndCreationDate } from "./styles";
+import { Card, ProfileAndCreationDate } from "./styles";
 
 import Green from "../../../../components/Green";
 import myUseNavigate from "../../../../utils/useNavigate";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
+import { PostTitle } from "../../../../components/postTitle";
 
 function PostCard({ item }: any) {
   const { to } = myUseNavigate();
@@ -23,15 +24,12 @@ function PostCard({ item }: any) {
           <Green text="Set 24, 2024" />
         </ProfileAndCreationDate>
 
-        <PostTitle>
+        <PostTitle typeoftitle="postCard">
           <p>{item.title}</p>
         </PostTitle>
 
         <div className="preview">
-          <p>{item.text.slice(0, 100).concat("...")}</p>
-        </div>
-        <div className="categories">
-          <p>#{item.categorie}</p>
+          <p>{item.text.slice(0, 80).trim().concat("...")}</p>
         </div>
       </div>
 

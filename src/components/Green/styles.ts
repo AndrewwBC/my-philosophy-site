@@ -8,6 +8,10 @@ export const Content = styled.div`
     font-size: 14px;
     font-weight: 500;
 
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+
     &:hover {
       background-color: ${({ theme }) => theme.green.light};
       transition: 0.3s;

@@ -25,6 +25,10 @@ export const SearchContainer = styled.div`
   background-color: #e9e9e9;
   grid-area: 1/1;
 
+  @media (max-width: 768px) {
+    grid-column: 1/-1;
+  }
+
   .searchIcon {
     cursor: pointer;
     padding-left: 4px;

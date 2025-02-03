@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import "./assets/global.css";
 import Feed from "./pages/Feed";
-import Layout from "./components/Layout";
+import Layout from "./Layout";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import { ThemeProvider } from "styled-components";
