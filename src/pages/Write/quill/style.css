@@ -19,16 +19,16 @@
   text-transform: uppercase;
 }
 
-.ql-size-small {
-  font-size: 14px !important;
-}
-
 .ql-size {
   font-size: 16px !important;
 }
 
-.ql-size-large {
+.ql-size-small {
   font-size: 20px !important;
+}
+
+.ql-size-large {
+  font-size: 24px !important;
 }
 .ql-size-huge {
   font-size: 32px !important;
