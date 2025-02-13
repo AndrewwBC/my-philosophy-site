@@ -1,11 +1,12 @@
 import { Card, ProfileAndCreationDate } from "./styles";
-
 import Green from "../../../../components/Green";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
+
 import { PostTitle } from "../../../../components/postTitle";
 import { useNavigate } from "react-router-dom";
+import { CardProps } from "../types";
 
-function PostCard({ item }: any) {
+function PostCard({ post }: CardProps) {
   const to = useNavigate();
 
   function handleCardClick() {
@@ -25,19 +26,16 @@ function PostCard({ item }: any) {
         </ProfileAndCreationDate>
 
         <PostTitle typeoftitle="postCard">
-          <p>{item.title}</p>
+          <p>{post.title}</p>
         </PostTitle>
 
         <div className="preview">
-          <p>{item.text.slice(0, 80).trim().concat("...")}</p>
+          <p>{post.text.slice(0, 80).trim().concat("...")}</p>
         </div>
       </div>
 
       <div className="postImage">
-        <img
-          src="https://media.istockphoto.com/id/1066705000/pt/foto/classic-statues-plato-close-up.jpg?s=612x612&w=0&k=20&c=MDZVFXOgsaezaB2lo--daz9ziXJrbdmGoCqUo-kcWgA="
-          alt=""
-        />
+        <img src={post.image} alt="" />
       </div>
     </Card>
   );

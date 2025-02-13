@@ -12,18 +12,18 @@ export const theme = {
     c9: "#000000",
   },
   purple: {
-    light: "#b89ff4",
-    medium: "#7b44ff",
-    dark: "#581de6",
+    light: "#A56ABA",
+    medium: "#9632BA",
+    dark: "#581E6E",
   },
   green: {
     light: "#E5F5B7",
     medium: "#C3DA8C",
     dark: "#437512",
   },
-  yellow: {
-    light: "#f6bb00",
-    medium: "#e6bb52",
-    dark: "#ffa500",
+  paper: {
+    light: "#BFAA6B",
+    medium: "#8C7345",
+    dark: "#73542F",
   },
 };

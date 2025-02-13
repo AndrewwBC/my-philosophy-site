@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Card = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-template-rows: 160px;
 
   @media (max-width: 500px) {
     grid-template-columns: 3fr 1fr;
@@ -42,13 +43,14 @@ export const Card = styled.section`
 
   .postImage {
     height: 100%;
+    width: 100%;
     img {
-      width: 100%;
       object-fit: cover;
+      min-width: 100%;
       max-height: 100%;
       min-height: 100%;
-      height: 100%;
       border-radius: 4px;
+      object-position: 0px -36px;
     }
   }
 `;
