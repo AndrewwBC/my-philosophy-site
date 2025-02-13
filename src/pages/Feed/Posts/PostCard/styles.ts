@@ -22,6 +22,11 @@ export const CardContainer = styled.div`
       animation: ${animaIn} 0.6s forwards ease-in;
     }
   }
+
+  &:not(&:hover) {
+    opacity: 0.9;
+    transition: all 0.6s;
+  }
 `;
 
 export const Card = styled.section`
