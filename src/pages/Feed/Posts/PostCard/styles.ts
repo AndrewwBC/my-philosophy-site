@@ -102,7 +102,7 @@ export const CardHeader = styled.div`
   display: flex;
   align-items: start;
   gap: 16px;
-  padding: 8px 4px;
+  padding: 8px;
   padding-bottom: 18px;
   position: absolute;
 
@@ -112,11 +112,23 @@ export const CardHeader = styled.div`
     gap: 2px;
     font-size: 14px;
     color: #777;
+
+    .ico {
+      color: ${({ theme }) => theme.paper.dark};
+    }
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      .ico {
+        height: 16px;
+        width: 16px;
+      }
+    }
   }
 
   background-color: #f9f9f9;
 
-  width: 50%;
+  width: max-content;
   height: max-content;
   top: -12px;
   left: 8px;

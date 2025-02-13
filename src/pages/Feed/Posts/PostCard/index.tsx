@@ -22,21 +22,30 @@ function PostCard({ post }: CardProps) {
     to("/post");
   }
 
+  const iconsData = [
+    {
+      icon: <PiHandsClapping className="ico" size={22} />,
+      value: 234,
+    },
+    {
+      icon: <FaRegComment className="ico" size={18} />,
+      value: 129,
+    },
+    {
+      icon: <FaCalendarAlt className="ico" size={18} />,
+      value: "Set 24, 2024",
+    },
+  ];
+
   return (
     <CardContainer>
       <CardHeader className="cardHeader">
-        <div>
-          <PiHandsClapping size={22} color="black" />
-          234
-        </div>
-        <div>
-          <FaRegComment size={18} color="black" />
-          129
-        </div>
-        <div>
-          <FaCalendarAlt size={18} />
-          Set 24, 2024
-        </div>
+        {iconsData.map((icon) => (
+          <div>
+            {icon.icon}
+            <span>{icon.value}</span>
+          </div>
+        ))}
       </CardHeader>
 
       <Card className="card" onClick={() => handleCardClick()}>
