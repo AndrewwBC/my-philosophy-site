@@ -1,12 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const animaIn = keyframes`
-  from {
-    top: -12px;
-  } to {
-    top: -40px;
-  }
-`;
+import styled from "styled-components";
 
 export const CardContainer = styled.div`
   display: flex;
@@ -18,8 +10,12 @@ export const CardContainer = styled.div`
     }
 
     .cardHeader {
-      z-index: 100 !important;
-      animation: ${animaIn} 0.6s forwards ease-in;
+      top: -40px;
+      transition: 0.6s ease-in;
+
+      @media (max-width: 768px) {
+        top: -32px;
+      }
     }
   }
 
