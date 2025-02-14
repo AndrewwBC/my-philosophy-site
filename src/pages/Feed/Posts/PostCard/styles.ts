@@ -42,7 +42,7 @@ export const Card = styled.section`
   height: 100%;
   border-radius: 4px;
   background-color: #f9f9f9;
-  box-shadow: 1px 1px 4px #bdbdbd, -5px -5px 10px #ffffff;
+  box-shadow: 2px 2px 6px #bdbdbd;
   cursor: pointer;
 
   &:hover {
@@ -70,7 +70,6 @@ export const Card = styled.section`
     height: 100%;
     width: 100%;
     img {
-      height: 100%;
       object-fit: cover;
       width: 100%;
       max-height: 100%;
@@ -121,7 +120,7 @@ export const CardHeader = styled.div`
     }
   }
 
-  background-color: #f9f9f9;
+  background-color: #fff;
 
   width: max-content;
   height: max-content;
@@ -129,4 +128,6 @@ export const CardHeader = styled.div`
   left: 8px;
   border-radius: 8px;
   border: 2px solid rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0px 2px 2px #e9e9e9;
 `;
