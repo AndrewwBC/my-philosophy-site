@@ -54,6 +54,10 @@ export const Card = styled.section`
     flex-direction: column;
     gap: 4px;
     padding-bottom: 8px;
+
+    .title {
+      margin-top: 4px;
+    }
   }
 
   .preview {
@@ -76,19 +80,6 @@ export const Card = styled.section`
       min-height: 100%;
       border-radius: 4px;
     }
-  }
-`;
-
-export const ProfileAndCreationDate = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin: 8px 0px;
-  padding-right: 24px;
-
-  @media (max-width: 768px) {
-    gap: 2px;
   }
 `;
 

@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContainer,
-  CardHeader,
-  ProfileAndCreationDate,
-} from "./styles";
-import Green from "../../../../components/Green";
+import { Card, CardContainer, CardHeader } from "./styles";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
 
 import { PostTitle } from "../../../../components/postTitle";
@@ -50,15 +44,11 @@ function PostCard({ post }: CardProps) {
 
       <Card className="card" onClick={() => handleCardClick()}>
         <div className="textContent">
-          <ProfileAndCreationDate>
-            <UsernameAndImg
-              username="Andrew Campos"
-              imgUrl="https://media.licdn.com/dms/image/v2/D4D03AQECfeL929bGhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684103633996?e=1744243200&v=beta&t=UWg46XjeykG4ZwAGhHA9adJJteP9n9pCHtOlG5jKcGc"
-            />
-
-            <Green text="Set 24, 2024" />
-          </ProfileAndCreationDate>
-          <PostTitle typeoftitle="postCard">
+          <UsernameAndImg
+            username="Andrew Campos"
+            imgUrl="https://media.licdn.com/dms/image/v2/D4D03AQECfeL929bGhQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684103633996?e=1744243200&v=beta&t=UWg46XjeykG4ZwAGhHA9adJJteP9n9pCHtOlG5jKcGc"
+          />
+          <PostTitle className="title" typeoftitle="postCard">
             <p>{post.title}</p>
           </PostTitle>
 
