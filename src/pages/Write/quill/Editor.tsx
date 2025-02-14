@@ -3,7 +3,6 @@ import { forwardRef, useEffect, useLayoutEffect, useRef } from "react";
 import "./style.css";
 import { EditorDiv } from "./styles";
 
-// Editor is an uncontrolled React component
 const Editor = forwardRef(
   ({ defaultValue, onTextChange, onSelectionChange }: any, ref: any) => {
     const containerRef: any = useRef(null);
@@ -23,7 +22,7 @@ const Editor = forwardRef(
       );
 
       const toolbarOptions = [
-        [{ size: ["small", "large", "huge"] }], // custom dropdown
+        [{ size: ["small", false, "large", "huge"] }], // custom dropdown
 
         ["bold", "italic", "underline", "strike"], // toggled buttons
 
@@ -35,10 +34,7 @@ const Editor = forwardRef(
         [{ script: "sub" }, { script: "super" }], // superscript/subscript
         [{ direction: "rtl" }], // text direction
 
-        [{ header: [1, 2, 3, false] }],
-
         [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-        [{ font: [] }],
         [{ align: [] }],
 
         ["clean"], // remove formatting button

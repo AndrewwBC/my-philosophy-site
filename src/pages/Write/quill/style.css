@@ -5,6 +5,16 @@
   padding: 10px;
 }
 
+.ql-toolbar {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.ql-container {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
 .controls-right {
   margin-left: auto;
 }
@@ -24,7 +34,11 @@
 }
 
 .ql-size-small {
-  font-size: 20px !important;
+  font-size: 14px !important;
+}
+
+.ql-size-normal {
+  font-size: 18px !important;
 }
 
 .ql-size-large {
@@ -32,4 +46,8 @@
 }
 .ql-size-huge {
   font-size: 32px !important;
+}
+
+.ql-editor p {
+  font-size: 18px !important;
 }
