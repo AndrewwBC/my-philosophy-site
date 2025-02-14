@@ -1,15 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { PostContainer, UserAndPostInfo } from "./styles";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
 
 function Post() {
   const divRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // const innerHTML =
-    // const innerHTMLFixed = innerHTML.replace("<br>", "<br/>");
-    // divRef.current!.innerHTML = innerHTMLFixed;
-  }, []);
 
   return (
     <PostContainer>
