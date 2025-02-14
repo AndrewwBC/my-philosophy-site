@@ -46,7 +46,6 @@ export const Card = styled.section`
   cursor: pointer;
 
   &:hover {
-    background-color: #f9f9f9;
     background: #ffffff;
   }
 
