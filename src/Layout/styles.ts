@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const OutletContainer = styled.div`
-  background-color: #f9f9f9;
+  background-color: ${({ theme }) => theme.bg};
 
   .content {
     max-width: 1200px;
