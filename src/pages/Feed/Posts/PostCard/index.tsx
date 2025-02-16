@@ -5,9 +5,7 @@ import { PostTitle } from "../../../../components/postTitle";
 import { useNavigate } from "react-router-dom";
 import { CardProps } from "../types";
 
-import { PiHandsClapping } from "react-icons/pi";
-import { FaRegComment } from "react-icons/fa";
-import { FaCalendarAlt } from "react-icons/fa";
+import ClapsCommentsAndDateIcons from "../../../../components/ClapsCommentsAndDateIcons";
 
 function PostCard({ post }: CardProps) {
   const to = useNavigate();
@@ -16,30 +14,14 @@ function PostCard({ post }: CardProps) {
     to("/post");
   }
 
-  const iconsData = [
-    {
-      icon: <PiHandsClapping className="ico" size={22} />,
-      value: 234,
-    },
-    {
-      icon: <FaRegComment className="ico" size={18} />,
-      value: 129,
-    },
-    {
-      icon: <FaCalendarAlt className="ico" size={18} />,
-      value: "Set 24, 2024",
-    },
-  ];
-
   return (
     <CardContainer>
       <CardHeader className="cardHeader">
-        {iconsData.map((icon) => (
-          <div>
-            {icon.icon}
-            <span>{icon.value}</span>
-          </div>
-        ))}
+        <ClapsCommentsAndDateIcons
+          clapsQuantity="200"
+          commentsQuantity="200"
+          date="Set 23, 2024"
+        />
       </CardHeader>
 
       <Card className="card" onClick={() => handleCardClick()}>

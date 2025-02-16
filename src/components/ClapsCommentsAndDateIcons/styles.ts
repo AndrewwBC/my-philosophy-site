@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+  color: #777;
+
   div {
     display: flex;
     align-items: center;
+    gap: 2px;
   }
 
   .ico {

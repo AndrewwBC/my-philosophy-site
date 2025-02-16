@@ -8,10 +8,7 @@ import {
   UserAndPostNumbers,
 } from "./styles";
 import UsernameAndImg from "../../../../components/UsernameAndImg";
-
-import { PiHandsClapping } from "react-icons/pi";
-import { FaRegComment } from "react-icons/fa";
-import { FaCalendarAlt } from "react-icons/fa";
+import ClapsCommentsAndDateIcons from "../../../../components/ClapsCommentsAndDateIcons";
 
 function Post() {
   const divRef = useRef<HTMLDivElement>(null);
@@ -21,20 +18,6 @@ function Post() {
       '<p><span style="background-color: rgb(230, 0, 0); color: rgb(205, 205, 205);">Platão foi um filósofo e matemático do período clássico da Grécia Antiga, autor de diversos diálogos filosóficos e fundador da Academia em Atenas, a primeira instituição de educação superior do mundo ocidental.</span></p>';
   }, []);
 
-  const iconsData = [
-    {
-      icon: <PiHandsClapping className="ico" size={22} />,
-      value: 234,
-    },
-    {
-      icon: <FaRegComment className="ico" size={18} />,
-      value: 129,
-    },
-    {
-      icon: <FaCalendarAlt className="ico" size={18} />,
-      value: "Set 24, 2024",
-    },
-  ];
   return (
     <PostContainer>
       <PostInfo>
@@ -56,12 +39,11 @@ function Post() {
         </User>
 
         <Icons>
-          {iconsData.map((icon) => (
-            <div>
-              {icon.icon}
-              <span>{icon.value}</span>
-            </div>
-          ))}
+          <ClapsCommentsAndDateIcons
+            clapsQuantity="200"
+            commentsQuantity="200"
+            date="Set 23, 2023"
+          />
         </Icons>
       </UserAndPostNumbers>
     </PostContainer>
