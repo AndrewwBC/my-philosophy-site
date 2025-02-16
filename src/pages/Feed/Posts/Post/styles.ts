@@ -5,6 +5,7 @@ export const PostContainer = styled.main`
   height: 100vh;
   margin: 0 auto;
   margin-top: 24px;
+  padding: 4px;
 
   .ql-editor {
     height: max-content;
@@ -38,8 +39,13 @@ export const EditorContainer = styled.div`
 export const UserAndPostNumbers = styled.div`
   display: flex;
   align-items: center;
-  gap: 64px;
+  justify-content: space-around;
   margin-top: 24px;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    gap: 12px;
+  }
 `;
 
 export const User = styled.div`
