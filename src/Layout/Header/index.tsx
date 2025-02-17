@@ -24,7 +24,7 @@ const Header = () => {
               <span>Feed</span>
             </li>
 
-            {data.token ? (
+            {false ? (
               <li onClick={() => handleTo("/auth/write")}>
                 <IoCreateOutline className="penIcon" size={26} />
                 <span>Postar</span>

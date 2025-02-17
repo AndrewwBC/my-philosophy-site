@@ -47,7 +47,7 @@ const Login = () => {
     <Content>
       {isLoading && <Loading />}
 
-      <p>Login</p>
+      <span>Login</span>
       <MyForm>
         <label>
           <small>Email</small>

@@ -6,8 +6,9 @@ export const Content = styled.section`
   justify-content: center;
   flex-direction: column;
 
-  p {
+  span {
     font-size: 24px;
+    font-weight: 600;
   }
 
   .register {
