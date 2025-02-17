@@ -8,6 +8,7 @@ import { MyInput } from "../../components/input";
 import { MyButton } from "../../components/button";
 import { MyNavUI } from "../../components/myNavUi";
 import FormGroup from "../../components/FormGroup";
+import { MyForm } from "../../components/form";
 
 const Login = () => {
   const { setData } = useContext(UserContext);
@@ -48,7 +49,8 @@ const Login = () => {
       {isLoading && <Loading />}
 
       <span>Login</span>
-      <form>
+
+      <MyForm>
         <FormGroup label="Email">
           <MyInput
             type="email"
@@ -76,14 +78,12 @@ const Login = () => {
         <MyButton onClick={handleSubmit} disabled={isLoading}>
           Entrar
         </MyButton>
+      </MyForm>
 
-        <MyNavUI>
-          <div>
-            <small>Não tem uma conta?</small>
-            <Link to="/register">Cadastre-se</Link>
-          </div>
-        </MyNavUI>
-      </form>
+      <MyNavUI>
+        <small>Não tem uma conta?</small>
+        <Link to="/register">Cadastre-se</Link>
+      </MyNavUI>
     </Content>
   );
 };

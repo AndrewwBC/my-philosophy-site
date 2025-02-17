@@ -1,26 +1,14 @@
 import styled from "styled-components";
 
-export const Content = styled.div`
+export const Content = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-width: 400px;
 
-  .title {
+  span {
     font-size: 24px;
-    margin-bottom: 24px;
-  }
-
-  .linkToLogin {
-    text-align: end;
     font-weight: 600;
-    color: #222;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    padding: 8px;
-
-    &:hover {
-      color: ${({ theme }) => theme.purple.dark};
-      background-color: #f9f9f9;
-    }
+    margin-bottom: 24px;
   }
 `;

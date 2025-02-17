@@ -4,13 +4,14 @@ import { MyInput } from "../../components/input";
 import { Content } from "./styles";
 import { MyNavUI } from "../../components/myNavUi";
 import FormGroup from "../../components/FormGroup";
+import { MyForm } from "../../components/form";
 
 export default function Register() {
   return (
     <Content>
-      <p className="title">Registre-se</p>
+      <span>Registre-se</span>
 
-      <form>
+      <MyForm>
         <FormGroup label="Nome">
           <MyInput type="text" placeholder="Digite o seu nome" />
         </FormGroup>
@@ -24,14 +25,12 @@ export default function Register() {
         </FormGroup>
 
         <MyButton>Cadastre-se</MyButton>
+      </MyForm>
 
-        <MyNavUI>
-          <div>
-            <small>Já possui uma conta?</small>
-            <Link to="/login">Login</Link>
-          </div>
-        </MyNavUI>
-      </form>
+      <MyNavUI>
+        <small>Já possui uma conta?</small>
+        <Link to="/login">Login</Link>
+      </MyNavUI>
     </Content>
   );
 }
