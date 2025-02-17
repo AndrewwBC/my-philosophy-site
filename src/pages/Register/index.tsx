@@ -3,6 +3,7 @@ import { MyButton } from "../../components/button";
 import { MyInput } from "../../components/input";
 import { Container, Content } from "./styles";
 import { MyNavUI } from "../../components/myNavUi";
+import FormGroup from "../../components/FormGroup";
 
 export default function Register() {
   return (
@@ -11,20 +12,17 @@ export default function Register() {
         <p className="title">Registre-se</p>
 
         <form>
-          <label>
-            <small>Nome</small>
+          <FormGroup label="Nome">
             <MyInput type="text" placeholder="Digite o seu nome" />
-          </label>
+          </FormGroup>
 
-          <label>
-            <small>Email</small>
+          <FormGroup label="Email">
             <MyInput type="text" placeholder="Digite o seu email" />
-          </label>
+          </FormGroup>
 
-          <label>
-            <small>Senha</small>
+          <FormGroup label="Senha">
             <MyInput type="password" placeholder="Digite a sua senha" />
-          </label>
+          </FormGroup>
 
           <MyButton>Cadastre-se</MyButton>
 

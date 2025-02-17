@@ -10,6 +10,7 @@ export const MyButton = styled.button`
   color: #fff;
   font-weight: 600;
   font-size: 16px;
+  width: 100%;
 
   &:disabled {
     background-color: #999;
