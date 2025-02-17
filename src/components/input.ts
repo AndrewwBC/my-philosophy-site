@@ -10,7 +10,7 @@ export const MyInput = styled.input`
   cursor: auto;
 
   &::placeholder {
-    font-size: 12px;
+    font-size: 14px;
     color: ${({ theme }) => theme.neutral.c6};
   }
 
