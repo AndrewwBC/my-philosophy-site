@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Content = styled.section`
+export const LoginAndRegisterContent = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,5 +11,6 @@ export const Content = styled.section`
   span {
     font-size: 24px;
     font-weight: 600;
+    margin-bottom: 24px;
   }
 `;

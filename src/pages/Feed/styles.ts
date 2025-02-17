@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin-top: 120px;
+  margin-top: 60px;
 
   & > div:first-child {
     border-right: 1px solid rgba(0, 0, 0, 0.1);

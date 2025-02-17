@@ -4,7 +4,7 @@ export const Main = styled.main`
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   height: 100vh;
   width: 100%;
 `;

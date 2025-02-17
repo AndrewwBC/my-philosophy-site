@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { MyButton } from "../../components/button";
 import { MyInput } from "../../components/input";
-import { Content } from "./styles";
+
 import { MyNavUI } from "../../components/myNavUi";
 import FormGroup from "../../components/FormGroup";
 import { MyForm } from "../../components/form";
+import { LoginAndRegisterContent } from "../../components/loginAndRegisterContainer";
 
 export default function Register() {
   return (
-    <Content>
+    <LoginAndRegisterContent>
       <span>Registre-se</span>
 
       <MyForm>
@@ -31,6 +32,6 @@ export default function Register() {
         <small>Já possui uma conta?</small>
         <Link to="/login">Login</Link>
       </MyNavUI>
-    </Content>
+    </LoginAndRegisterContent>
   );
 }

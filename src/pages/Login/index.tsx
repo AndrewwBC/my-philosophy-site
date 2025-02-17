@@ -1,5 +1,4 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useState } from "react";
-import { Content } from "./styles";
 import { UserContext } from "../../context/userContext";
 import { login } from "./api";
 import Loading from "../../components/Loading";
@@ -9,6 +8,7 @@ import { MyButton } from "../../components/button";
 import { MyNavUI } from "../../components/myNavUi";
 import FormGroup from "../../components/FormGroup";
 import { MyForm } from "../../components/form";
+import { LoginAndRegisterContent } from "../../components/loginAndRegisterContainer";
 
 const Login = () => {
   const { setData } = useContext(UserContext);
@@ -45,7 +45,7 @@ const Login = () => {
     }
   }
   return (
-    <Content>
+    <LoginAndRegisterContent>
       {isLoading && <Loading />}
 
       <span>Login</span>
@@ -84,7 +84,7 @@ const Login = () => {
         <small>Não tem uma conta?</small>
         <Link to="/register">Cadastre-se</Link>
       </MyNavUI>
-    </Content>
+    </LoginAndRegisterContent>
   );
 };
 
