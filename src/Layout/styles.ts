@@ -7,7 +7,6 @@ export const OutletContainer = styled.div`
     max-width: 1200px;
     margin: 0 auto;
 
-    margin-top: 64px;
     height: 100%;
 
     background-color: inherit;
