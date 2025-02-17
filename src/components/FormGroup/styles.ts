@@ -5,6 +5,6 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2px;
-    font-size: 16px;
+    font-size: 18px;
   }
 `;

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { MyButton } from "../../components/button";
-import { MyForm } from "../../components/form";
 import { MyInput } from "../../components/input";
 import { Container, Content } from "./styles";
 import { MyNavUI } from "../../components/myNavUi";
@@ -11,7 +10,7 @@ export default function Register() {
       <Content>
         <p className="title">Registre-se</p>
 
-        <MyForm>
+        <form>
           <label>
             <small>Nome</small>
             <MyInput type="text" placeholder="Digite o seu nome" />
@@ -35,7 +34,7 @@ export default function Register() {
               <Link to="/login">Login</Link>
             </div>
           </MyNavUI>
-        </MyForm>
+        </form>
       </Content>
     </Container>
   );
