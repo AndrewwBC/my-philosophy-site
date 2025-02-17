@@ -5,9 +5,9 @@ import { login } from "./api";
 import Loading from "../../components/Loading";
 import { Link, useNavigate } from "react-router-dom";
 import { MyInput } from "../../components/input";
-import { MyForm } from "../../components/form";
 import { MyButton } from "../../components/button";
 import { MyNavUI } from "../../components/myNavUi";
+import FormGroup from "../../components/FormGroup";
 
 const Login = () => {
   const { setData } = useContext(UserContext);
@@ -48,9 +48,8 @@ const Login = () => {
       {isLoading && <Loading />}
 
       <span>Login</span>
-      <MyForm>
-        <label>
-          <small>Email</small>
+      <form>
+        <FormGroup label="Email">
           <MyInput
             type="email"
             placeholder="Digite o seu email."
@@ -61,9 +60,8 @@ const Login = () => {
               }))
             }
           />
-        </label>
-        <label>
-          <small>Senha</small>
+        </FormGroup>
+        <FormGroup label="Senha">
           <MyInput
             type="password"
             placeholder="Digite a sua senha."
@@ -74,8 +72,7 @@ const Login = () => {
               }))
             }
           />
-        </label>
-
+        </FormGroup>
         <MyButton onClick={handleSubmit} disabled={isLoading}>
           Entrar
         </MyButton>
@@ -86,7 +83,7 @@ const Login = () => {
             <Link to="/register">Cadastre-se</Link>
           </div>
         </MyNavUI>
-      </MyForm>
+      </form>
     </Content>
   );
 };
