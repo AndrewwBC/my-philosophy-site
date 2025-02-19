@@ -12,7 +12,7 @@ const MyQuill = () => {
 
       <MyButton
         type="button"
-        style={{ justifySelf: "center" }}
+        style={{ justifySelf: "center", marginTop: "20px" }}
         onClick={() => {
           console.log(quillRef.current.editor);
         }}

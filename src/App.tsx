@@ -10,7 +10,7 @@ import { theme } from "./assets/theme";
 import Write from "./pages/Write";
 import Register from "./pages/Register";
 import { UserProvider } from "./context/userContext";
-import Post from "./pages/Feed/Posts/Post";
+import Post from "./pages/Post";
 
 function App() {
   return (

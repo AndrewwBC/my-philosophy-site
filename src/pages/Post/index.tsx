@@ -7,8 +7,8 @@ import {
   User,
   UserAndPostNumbers,
 } from "./styles";
-import UsernameAndImg from "../../../../components/UsernameAndImg";
-import ClapsCommentsAndDateIcons from "../../../../components/ClapsCommentsAndDateIcons";
+import UsernameAndImg from "../../components/UsernameAndImg";
+import ClapsCommentsAndDateIcons from "../../components/ClapsCommentsAndDateIcons";
 
 function Post() {
   const divRef = useRef<HTMLDivElement>(null);
