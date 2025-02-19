@@ -4,7 +4,7 @@ export const PostContainer = styled.main`
   max-width: 800px;
   height: 100vh;
   margin: 0 auto;
-  margin-top: 24px;
+  margin-top: 80px;
   padding: 4px;
 
   .ql-editor {
